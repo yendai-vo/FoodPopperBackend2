@@ -25,7 +25,7 @@ kevin = User.create(username: "phin", email: 'phin@email.com', password:'phin123
 
 humzah = User.create(username: "humzah", email: 'humzah@email.com', password:'humzah12', bio:'I absolutely adore Mala style food. Make me Dan Dan Noodles! or whatever I guess, I would eat anything.')
 
-catherine = User.create(username: 'Catherine',  email: 'catherine@email.com', password:'catherine', bio:'I am a stay-at-home mom and have 3 beautiful boys ages 4-13. In my spare time, I love to bake sweets for everyone. I am aspiring to open up my own bakery in the near future.')
+catherine = User.create(username: 'Catherine', email: 'catherine@email.com', password:'catherine', bio:'I am a stay-at-home mom and have 3 beautiful boys ages 4-13. In my spare time, I love to bake sweets for everyone. I am aspiring to open up my own bakery in the near future.')
 
 ########################## Venues ##########################
 
