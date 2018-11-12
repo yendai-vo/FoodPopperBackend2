@@ -9,7 +9,11 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = Reservation.create(reservation_params)
+    rparams = reservation_params
+    rparams[:user_id] = current_user.id
+    # eparams[:date_time] = '2018-11-17 19:00:00'
+    @reservation = Reservation.create(rparams)
+    render json: @reservation
   end
 
   def update

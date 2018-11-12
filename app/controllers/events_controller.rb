@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
     # @user_events = current_user.events
-    render json: @events, include: [:venue]
+    render json: @events, include: [:venue] 
   end
   
   def create
