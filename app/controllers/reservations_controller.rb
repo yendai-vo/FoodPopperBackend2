@@ -1,7 +1,11 @@
 class ReservationsController < ApplicationController
+
+  before_action :authenticate_user,  only: [:index]
+
   def index
-    @reservations = Reservations.all
-    render json: @reservations
+    @reservations = current_user.reservations
+    # @reservationEvents = Event.includes(:reservations).where("reservations.user_id" => current_user.id)
+    render json: current_user.reserved_events
   end
 
   def create

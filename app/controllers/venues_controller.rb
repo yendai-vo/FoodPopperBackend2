@@ -5,12 +5,16 @@ class VenuesController < ApplicationController
   end
 
   def create
-    @venue = Venue.create(venue_params)
+    vparams = venue_params
+    vparams[:user_id] = current_user.id
+    @venue = Venue.create(vparams)
+    render json: { status: 200, venue: @venue }
+
   end
 
   private
 
   def venue_params
-    params.require(:venue).permit(:id, :name, :street_address, :city, :state, :zip_code, :user_id)
+    params.require(:venue).permit(:id, :name, :street_address, :city, :state, :zip_code)
   end
 end

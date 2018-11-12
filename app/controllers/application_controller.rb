@@ -9,3 +9,11 @@ class ApplicationController < ActionController::API
      return_unauthorized unless !current_user.nil? && current_user.is_admin?
    end
 end
+
+require 'rails/application_controller'
+
+class StaticController < Rails::ApplicationController
+  def index
+    render file: Rails.root.join('public', 'index.html')
+  end
+end

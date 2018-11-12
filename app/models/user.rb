@@ -29,4 +29,6 @@ class User < ApplicationRecord
   has_many :venues
   has_many :events
   has_many :reservations
+  has_many :reserved_events, through: :reservations, source: :event
+  # has_many :created_events, through: :events, sources: :event
 end

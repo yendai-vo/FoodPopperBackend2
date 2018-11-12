@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
    # Home controller routes.
-   root   'home#index'
+  #  root   'home#index'
    get    'auth'            => 'home#auth'
    
    # Get login token from Knock
@@ -19,4 +19,8 @@ Rails.application.routes.draw do
    resources :events
    resources :venues
    resources :reservations 
+
+
+   get '*other', to: 'static#index'
+  #  get '*other', to: redirect('/')
 end
