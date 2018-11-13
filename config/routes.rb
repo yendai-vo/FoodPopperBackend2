@@ -21,6 +21,7 @@ Rails.application.routes.draw do
    resources :reservations 
 
 
-   get '*other', to: 'static#index'
+   get '/', to: 'static#index'
   #  get '*other', to: redirect('/')
 end
+

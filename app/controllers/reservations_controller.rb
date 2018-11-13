@@ -5,7 +5,8 @@ class ReservationsController < ApplicationController
   def index
     @reservations = current_user.reservations
     # @reservationEvents = Event.includes(:reservations).where("reservations.user_id" => current_user.id)
-    render json: current_user.reserved_events
+    render json: current_user.reserved_events, include: [:venue]
+    
   end
 
   def create

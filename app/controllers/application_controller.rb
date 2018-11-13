@@ -9,15 +9,15 @@ class ApplicationController < ActionController::API
      return_unauthorized unless !current_user.nil? && current_user.is_admin?
    end
 
-  #  def get_image_url
-  #   -> (image) do
-  #     begin
-  #       url_for(image)
-  #     rescue Module::DelegationError
-  #       ""
-  #     end
-  #   end
-  # end
+   def get_image_url
+    -> (image) do
+      begin
+        url_for(image)
+      rescue Module::DelegationError
+        ""
+      end
+    end
+  end
 
 end
 
